@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Awards from "../views/Awards.astro";
+import Hero from "../views/Hero.astro";
 ---
 
 <Layout
@@ -8,6 +10,20 @@ import Layout from "../layouts/Layout.astro";
   ogTitle="Da"
   navbarOption="Acasa"
 >
-  <h1>{"home.title"}</h1>
+  <section>
+    <Hero />
+  </section>
+  <section class="awards">
+    <Awards />
+  </section>
 </Layout>
-<style></style>
+<style lang="scss">
+  @use "./../style/index.scss" as *;
+
+  section:nth-child(2n + 1) {
+    background-color: $cl-bg-accents;
+  }
+  .awards {
+    margin-top: -7.5%;
+  }
+</style>

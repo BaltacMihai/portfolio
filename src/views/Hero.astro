@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import heroImg from "./../assets/Hero-Image.svg";
+---
+
+<div class="hero">
+  <div class="hero__text">
+    <h1>
+      Salut 👋,
+      <br /> Sunt <span class="accent">Mihai Bâltac</span>
+    </h1>
+    <a href="#" class="cta">Sa incepem</a>
+  </div>
+  <Image src={heroImg} alt="" />
+  <p>Ajut companiile sa devina branduri <span class="accent">premium.</span></p>
+</div>
+
+<style lang="scss">
+  @use "./../style/index.scss" as *;
+
+  .hero {
+    @extend %max-content-width;
+    display: flex;
+    justify-content: space-between;
+
+    min-height: 70vh;
+    height: 100%;
+
+    .accent {
+      color: $cl-primary;
+      font-weight: bold;
+    }
+
+    img {
+      align-self: end;
+    }
+
+    .hero__text {
+      h1 {
+        @extend %hero;
+      }
+
+      .cta {
+        @extend %cta;
+      }
+    }
+    h1,
+    p {
+      margin: 4rem 0;
+    }
+    p {
+      @extend %text;
+      .accent {
+        display: block;
+      }
+    }
+  }
+</style>

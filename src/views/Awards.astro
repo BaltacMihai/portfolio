@@ -1,0 +1,65 @@
+---
+import trophyIcon from "./../assets/cup.svg";
+import { Image } from "astro:assets";
+---
+
+<div class="awards">
+  <div class="experience">
+    <p class="accents">4</p>
+    <p>ani de experienta</p>
+  </div>
+  <a href="#" class="award">
+    <Image src={trophyIcon} alt="" />
+    <p>
+      Locul 3 la <span class="accent">Sesiunea de Cercetare Științifică</span>
+    </p>
+  </a>
+</div>
+
+<style lang="scss">
+  @use "./../style/index.scss" as *;
+
+  .awards {
+    @extend %max-content-width;
+    display: flex;
+    justify-content: space-between;
+    .experience {
+      display: flex;
+      align-items: center;
+      p {
+        @extend %sub-text;
+        width: 50%;
+
+        &.accents {
+          @extend %hero;
+          color: $cl-primary;
+          font-weight: bolder;
+          padding-right: 1rem;
+          width: auto;
+        }
+      }
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 1rem;
+      text-decoration: none;
+
+      img {
+        border: 2px solid $cl-secondary;
+        padding: 0.25rem;
+        border-radius: 100%;
+      }
+      p {
+        @extend %sub-text;
+        width: 50%;
+        color: $cl-secondary;
+
+        .accent {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+</style>
