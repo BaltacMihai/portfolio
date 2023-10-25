@@ -1,0 +1,68 @@
+---
+import SeoHead from "../package/SeoHead/SeoHead.astro";
+
+import Insights from "./../package/Insights/Insights.astro";
+import Navbar from "./../components/Navbar/Navbar.astro";
+interface Props {
+  title: string;
+  keywords?: string;
+  description: string;
+  ogTitle?: string;
+  ogImage?: string;
+  navbarOption?: string;
+}
+
+const {
+  title,
+  keywords,
+  description,
+  ogTitle,
+  navbarOption,
+  ogImage = "/logo.svg",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <Insights id="1" />
+    <SeoHead
+      icon="./../logo.svg"
+      keywords={keywords}
+      titleTemplate="%s - Baltac Mihai"
+      title={title}
+      titleDefault="Baltac Mihai"
+      description={description}
+      og={{
+        title: ogTitle,
+        image: ogImage,
+      }}
+      siteMapHref="/sitemap-index.xml"
+    />
+  </head>
+  <body>
+    <Navbar option={navbarOption} />
+    <main>
+      <slot />
+    </main></body
+  >
+
+  <style lang="scss">
+    @use "../style/index.scss" as *;
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: $cl-bg;
+      margin: 0 auto;
+    }
+    main {
+      padding-top: 13.5vh;
+      margin-bottom: 5vh;
+      min-height: 50vh;
+    }
+  </style>
+</html>

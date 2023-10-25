@@ -1,0 +1,48 @@
+@use "responsive.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap");
+
+%hero {
+  font-family: "Open Sans", sans-serif;
+  font-size: 48px;
+  @include responseve(lg) {
+    font-size: 40px;
+  }
+  @include responseve(sm) {
+    font-size: 32px;
+  }
+}
+
+%title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 32px;
+  @include responseve(lg) {
+    font-size: 28px;
+  }
+  @include responseve(sm) {
+    font-size: 20px;
+  }
+}
+
+%text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+
+  @include responseve(lg) {
+    font-size: 20px;
+  }
+
+  @include responseve(sm) {
+    font-size: 18px;
+  }
+}
+
+%sub-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  @include responseve(lg) {
+    font-size: 18px;
+  }
+  @include responseve(sm) {
+    font-size: 16px;
+  }
+}
